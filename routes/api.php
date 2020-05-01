@@ -10,4 +10,17 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Users
     Route::apiResource('users', 'UsersApiController');
 
+    // Asset Categories
+    Route::apiResource('asset-categories', 'AssetCategoryApiController');
+
+    // Asset Locations
+    Route::apiResource('asset-locations', 'AssetLocationApiController');
+
+    // Asset Statuses
+    Route::apiResource('asset-statuses', 'AssetStatusApiController');
+
+    // Assets
+    Route::post('assets/media', 'AssetApiController@storeMedia')->name('assets.storeMedia');
+    Route::apiResource('assets', 'AssetApiController');
+
 });
